@@ -1,0 +1,8 @@
+**********************PART - 1 **********************
+mongoDb atlas-
+(cluster)   1-shared 
+   2-serverless {charges for space we use}
+(cluster)   3-dedicated {for production work loads}
+**********************PART - 2 **********************
+
+create sepe projects for development ,testing and production
