@@ -1,0 +1,17 @@
+monogodb is general purpose document database
+
+Document > Collection > Database
+
+document is similar to json object
+It is displayed in json and stored in bson(binary json)
+
+_id is primary field
+
+documents may contain different fields and fields may contain different types
+
+Flexibility:-
+update classes to include new fields and start inserting documents with new schema
+
+it supports polymorphic document (means that in one collection you have many versions of document schema)
+
+
