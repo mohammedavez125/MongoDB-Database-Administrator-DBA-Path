@@ -1,0 +1,7 @@
+2 formats of connection Strings :-
+  1) Standard Format: It is used to connect standaklone clusters, replica sets, or sharded clusters
+  2) DNS Seed List format: provides a dns server server list to our connection string 
+                           gives more flexibility of deployment
+                           ability to change servers in rotation without configuring clients
+
+CONNECTION STRING : mongodb+srv://<username>:<password>@cluster0.usqsf.mongodb.net/?retryWrites=true&w=majority
