@@ -6,3 +6,37 @@ atlas setup --clusterName myAtlasClusterEDU --provider AWS --currentIp --skipSam
 
 use the following command to load the sample data into the Atlas cluster that you just deployed:
 atlas clusters loadSampleData myAtlasClusterEDU
+
+copy and paste the following command to get the connection string for your Atlas cluster. 
+atlas clusters connectionStrings describe myAtlasClusterEDU
+
+Copy and paste the following commands to get the connection string and store it in an environment variable.
+MY_ATLAS_CONNECTION_STRING=$(atlas clusters connectionStrings describe myAtlasClusterEDU | sed "1 d")
+mongosh -u myAtlasDBUser -p myatlas-001 $MY_ATLAS_CONNECTION_STRING
+
+insert(),insertMany()
+db.<collection>.insertOne()
+
+find():-
+db.<collection>.find(): this will display all documents
+find({field:{$eq:<value>}}) 
+      or 
+find({field:<value>}) [IMPLICIT SYNTAX TO SHORTEN THE LENGTH OF QUERY]
+
+$eq:-Specifies equality condition. The $eq operator matches documents where the value of a field equals the specified value.
+db.<collections>.find{ <field>: { $eq: <value> } }
+
+$in:-It allows us to select all documents that have a field value equal to any of the values specified in the array
+db.<collections>.find(  {  <field>  :  {  $in  :  <value>,<value>, ..  }})
+
+!!!The $eq operator selects documents where the field value is equal to a specific value, while the $ne operator selects documents where the field value is not equal to a particular value.
+
+COMPARISION OPERATORS : $gt, $lt, $lte, $gte(greater than, less than, less than equal to, greater than equal to)
+
+QUERY ARRAYS IN DOCUMENTS:
+
+$elemMatch: The $elemMatch operator matches documents that contain an array field with at least one element that matches all the specified query criteria.
+{ <field>: { $elemMatch: { <query1>, <query2>, ... } } }
+
+LOGICAL OPERATORS : $and, $or
+
