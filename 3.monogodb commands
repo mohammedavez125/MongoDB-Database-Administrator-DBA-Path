@@ -40,3 +40,6 @@ $elemMatch: The $elemMatch operator matches documents that contain an array fiel
 
 LOGICAL OPERATORS : $and, $or
 
+db.collection.replaceOne();
+db.collection.replaceOne(filter, replacement, options)
+
