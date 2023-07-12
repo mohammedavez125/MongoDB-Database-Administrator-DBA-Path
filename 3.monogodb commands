@@ -27,11 +27,11 @@ $eq:-Specifies equality condition. The $eq operator matches documents where the 
 db.<collections>.find{ <field>: { $eq: <value> } }
 
 $in:-It allows us to select all documents that have a field value equal to any of the values specified in the array
-db.<collections>.find(  {  <field>  :  {  $in  :  <value>,<value>, ..  }})
+db.<collections>.find(  {  <field>  :  {  $in  :  <value> ,<value> , ..  }})
 
 !!!The $eq operator selects documents where the field value is equal to a specific value, while the $ne operator selects documents where the field value is not equal to a particular value.
 
-COMPARISION OPERATORS : $gt, $lt, $lte, $gte(greater than, less than, less than equal to, greater than equal to)
+COMPARISION OPERATORS : $gt, $lt, $lte, $gte (greater than, less than, less than equal to, greater than equal to)
 
 QUERY ARRAYS IN DOCUMENTS:
 
@@ -40,6 +40,62 @@ $elemMatch: The $elemMatch operator matches documents that contain an array fiel
 
 LOGICAL OPERATORS : $and, $or
 
+replaceOne():-
 db.collection.replaceOne();
 db.collection.replaceOne(filter, replacement, options)
 
+updateOne():-
+The `updateOne()` method requires the use of an update operator to update a document, such as `$set`, `$push`, `$pop`, `$unset`, or `$inc`.
+db.collection.updateOne(filter, update, options)
+(update)$set= adds a new field and value to a document and replaces the value of a field if it already exists ,
+(option)upsert {upsert : true} =add if no field is present ,
+(update)$push = add value to array.
+(update)$inc=This operator increments a field by a specified value .
+
+findAndModify():-
+This method has the following form:
+db.collection.findAndModify({
+    query: <document>,
+    sort: <document>,
+    remove: <boolean>,
+    update: <document or aggregation pipeline>, // Changed in MongoDB 4.2
+    new: <boolean>,
+    fields: <document>,
+    upsert: <boolean>,
+    bypassDocumentValidation: <boolean>,
+    writeConcern: <document>,
+    collation: <document>,
+    arrayFilters: [ <filterdocument1>, ... ],
+    let: <document> // Added in MongoDB 5.0
+});
+
+updateMany():-
+This method has the following form:
+db.collection.updateMany(
+   <filter>,
+   <update>,
+   {
+     upsert: <boolean>,
+     writeConcern: <document>,
+     collation: <document>,
+     arrayFilters: [ <filterdocument1>, ... ],
+     hint:  <document|string>        // Available starting in MongoDB 4.2.1
+   }
+)
+
+deleteOne(),deleteMany():-
+db.collection.deleteOne(
+   <filter>,
+   {
+      writeConcern: <document>,
+      collation: <document>,
+      hint: <document|string>        // Available starting in MongoDB 4.4
+   }
+)
+db.collection.deleteMany(
+   <filter>,
+   {
+      writeConcern: <document>,
+      collation: <document>
+   }
+)
