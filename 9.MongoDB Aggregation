@@ -1,0 +1,3 @@
+AGGREGATION : it is an analysis and summary of data
+STAGE : an aggregation operation performed on the data
+AGGREGATION PIPELINE : a series of stages completed one at a time in order
