@@ -1,0 +1,10 @@
+db.COLLECTION_NAME.createIndex({KEY:1}) 
+Example – 
+  db.mycol.createIndex({“age”:1}){
+    “createdCollectionAutomatically” : false,
+    “numIndexesBefore” : 1,
+    “numIndexesAfter” : 2,
+    “ok” : 1
+    }
+
+
