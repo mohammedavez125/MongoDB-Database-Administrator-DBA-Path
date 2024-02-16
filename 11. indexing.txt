@@ -1,0 +1,12 @@
+Indexing in MongoDB : 
+MongoDB uses indexing in order to make the query processing more efficient. If there is no indexing, then the MongoDB must scan every document in the collection and retrieve only those documents that match the query.
+  db.COLLECTION_NAME.createIndex({KEY:1}) 
+Example – 
+    db.mycol.createIndex({“age”:1}){
+      “createdCollectionAutomatically” : false,
+      “numIndexesBefore” : 1,
+      “numIndexesAfter” : 2,
+      “ok” : 1
+      }
+
+
